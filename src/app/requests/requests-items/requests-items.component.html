@@ -1,0 +1,21 @@
+<nav>
+    <div class="nav nav-tabs fs-5 text-success" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-new-tab" data-bs-toggle="tab" data-bs-target="#nav-new" type="button" role="tab" aria-controls="nav-new" aria-selected="true"><i class="fa-solid fa-box-open"></i> الطلبات الحالية</button>
+      <button class="nav-link" id="nav-old-tab" data-bs-toggle="tab" data-bs-target="#nav-old" type="button" role="tab" aria-controls="nav-old" aria-selected="false"><i class="fa-solid fa-box"></i> الطلبات السابقة</button>
+    </div>
+</nav>
+<br>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-new" role="tabpanel" aria-labelledby="nav-new-tab">  
+        <div *ngFor="let req of newData">
+            <app-request-item [requestItem]="req"></app-request-item>
+        </div> 
+    </div>
+    <div class="tab-pane fade" id="nav-old" role="tabpanel" aria-labelledby="nav-old-tab">
+        <div *ngFor="let req of oldData">
+            <app-request-item [requestItem]="req"></app-request-item>
+        </div>
+    </div>
+</div>
+
+  
